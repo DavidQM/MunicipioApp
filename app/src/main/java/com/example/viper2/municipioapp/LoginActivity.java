@@ -9,7 +9,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.w3c.dom.Text;
+//import org.w3c.dom.Text;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -49,12 +49,10 @@ public class LoginActivity extends AppCompatActivity {
 
         tRegistrarse.setOnClickListener(new View.OnClickListener() {
             @Override
-
             public void onClick(View v) {
-
+                Toast.makeText(getApplicationContext(), "Registro", Toast.LENGTH_SHORT).show();
                 intent = new Intent (LoginActivity.this, RegistroActivity.class);
-                startActivityForResult(intent, 1234);
-             Toast.makeText(getApplicationContext(), "Registro", Toast.LENGTH_SHORT).show();
+                //startActivityForResult(intent,1234);
             }
 
         });
