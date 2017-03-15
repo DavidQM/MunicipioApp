@@ -52,7 +52,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(), "Registro", Toast.LENGTH_SHORT).show();
                 intent = new Intent (LoginActivity.this, RegistroActivity.class);
-                //startActivityForResult(intent,1234);
+                startActivityForResult(intent,1234);//esta linea me bloquea la app
             }
 
         });

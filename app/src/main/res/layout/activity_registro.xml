@@ -49,13 +49,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <Button
-            android:width="0dp"
+            android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:text="@string/registrarse"
             android:id="@+id/bRegistrarser"/>
         <Button
-            android:width="0dp"
+            android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:text="@string/cancelar"
