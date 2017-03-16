@@ -34,21 +34,35 @@ public class RegistroActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                // validar que todos los campos esten llenos
+                if (eUsernamer.getText().toString().equals("") || ePasswordr.getText().toString().equals("")|| eRepasswordr.getText().toString().equals("")|| eCorreor.getText().toString().equals("")){
+                    // validar que todos los campos esten llenos
+                    Toast.makeText(getApplicationContext(),"Aun hay campos sin llenar", Toast.LENGTH_SHORT).show();
+                }else {
+                    if(!ePasswordr.getText().toString().equals(eRepasswordr.getText().toString())){
+                        //validar que el password y repPassword sean iguales
+                        Toast.makeText(getApplicationContext(),"Exite diferencia en las contraseñas", Toast.LENGTH_SHORT).show();
+                        ((EditText) findViewById(R.id.ePasswordr)).setText("");
+                        ((EditText) findViewById(R.id.eRepasswordr)).setText("");
+                    }else{
+                        if(eCorreor.getText().toString().indexOf("@")<0){
+                            //validar que el email
+                            Toast.makeText(getApplicationContext(),"Email Erroneo", Toast.LENGTH_SHORT).show();
+                            ((EditText) findViewById(R.id.eCorreor)).setText("");
+                        }else {
+                            username = eUsernamer.getText().toString();
+                            password = ePasswordr.getText().toString();
+                            repPassword = eRepasswordr.getText().toString();
+                            correo = eCorreor.getText().toString();
 
-                username = eUsernamer.getText().toString();
-                password = ePasswordr.getText().toString();
-                repPassword = eRepasswordr.getText().toString();
-                correo = eCorreor.getText().toString();
-
-                //validar que el password y repPassword sean iguales
-
-                intent = new Intent();
-                intent.putExtra("username", username);
-                intent.putExtra("password", password);
-                intent.putExtra("correo",correo);
-                setResult(RESULT_OK,intent);
-                finish();
+                            intent = new Intent();
+                            intent.putExtra("username", username);
+                            intent.putExtra("password", password);
+                            intent.putExtra("correo", correo);
+                            setResult(RESULT_OK, intent);
+                            finish();
+                        }
+                    }
+                }
             }
         });
 

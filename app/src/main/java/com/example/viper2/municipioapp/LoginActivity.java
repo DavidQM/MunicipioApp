@@ -17,8 +17,8 @@ public class LoginActivity extends AppCompatActivity {
     TextView tRegistrarse;
     Button bIniciar;
     Intent intent;//para abirir nuevas actividades
+    //String username="david", password="123",correo="adqm@";//para hacer pruebas rapidas
     String username="", password="",correo="";
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,7 +37,10 @@ public class LoginActivity extends AppCompatActivity {
                 //Validar los datos digitados con los del registro
                 if (eUsername.getText().toString().equals(username) && ePassword.getText().toString().equals(password)){
                     intent = new Intent (LoginActivity.this, MainActivity.class);
+                    intent.putExtra("username", username);
+                    intent.putExtra("correo", correo);
                     startActivity(intent);
+                    setResult(RESULT_OK, intent);
                     finish();
                 }else{
                     Toast.makeText(getApplicationContext(), "Nombre de usuario o contraseña incorrectos", Toast.LENGTH_SHORT).show();
@@ -52,7 +55,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(), "Registro", Toast.LENGTH_SHORT).show();
                 intent = new Intent (LoginActivity.this, RegistroActivity.class);
-                startActivityForResult(intent,1234);//esta linea me bloquea la app
+                startActivityForResult(intent,1234);
             }
 
         });

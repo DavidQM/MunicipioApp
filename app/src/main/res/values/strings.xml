@@ -11,4 +11,39 @@
     <string name="repassword">Repetir Password</string>
     <string name="crear">Crear</string>
     <string name="cancelar">Cancelar</string>
+    <string name="mi_perfil">Mi Perfil</string>
+    <string name="sign_out">Desconectarse</string>
+    <string name="texto_0">Guatapé(Ant)</string>
+    <string name="texto_1">
+        Municipio: Guatapé.\n
+        Altura (msnm): 1.925 metros. \n
+        Temperatura: 27 grados centígrados. \n
+        Distancia a Medellín: 82 Kms. \n
+        Economía: Turismo, agricultura, ganadería. \n
+        Cómo llegar: Vía Terrestre \n (Desde Medellín tomando Autopista Med - Bog).
+    </string>
+    <string name="texto_2">
+       Guatapé fue fundado en 1811 por Francisco Giraldo Jiménez,
+        recibió este nombre por el cacique “Guatapé” quien era el
+        poblador indígena  que habitaba esta región. Guatapé cuenta
+        con un clima templado, perfecto para realizar actividades deportivas
+        y ecológicas al aire libre. \n\n
+        Este municipio cuenta además con una población aproximada de 8.028 habitantes. \n\n
+       Guatapé se encuentra a una distancia corta de Medellín,
+        ya que se cuenta con una vía de doble calzada (autopista Bogotá
+        – Medellín). El tiempo estimado del trayecto desde Medellín es
+        aproximadamente de 1 hora.\n
+    </string>
+    <string name="texto_3">
+        El municipio actualmente se considera un destino turístico a nivel
+        nacional e internacional, gracias a que allí se puede contar
+        con el plan más tranquilo (caminatas ecológicas) o los más
+        emocionantes (Deportes acuáticos, escalar, Cannopy, entre otros).\n
+    </string>
+    <string name="texto_4">Cannopy</string>
+    <string name="texto_5">Parque de la Culebra</string>
+    <string name="texto_6">Zocalos</string>
+    <string name="texto_7">Deportes Acuaticos</string>
+    <string name="texto_8">Te Esperamos !</string>
+    <string name="act_main">Pagina Principal</string>
 </resources>
