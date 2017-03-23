@@ -61,13 +61,13 @@ android:fillViewport="true"> <!--IMPORTANT otherwise backgrnd img. will not fill
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:src="@drawable/cannopy_min"
+                    android:src="@drawable/cannopy_min_2"
                     android:layout_margin="10dp"/>
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:src="@drawable/culebra_min"
+                    android:src="@drawable/culebra_min_2"
                     android:layout_margin="10dp"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -87,12 +87,12 @@ android:fillViewport="true"> <!--IMPORTANT otherwise backgrnd img. will not fill
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:src="@drawable/zocalos_min"/>
+                    android:src="@drawable/zocalos_min_2"/>
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:src="@drawable/kayak_min"/>
+                    android:src="@drawable/kayak_min_2"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

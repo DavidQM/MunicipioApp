@@ -13,6 +13,7 @@
     <string name="cancelar">Cancelar</string>
     <string name="mi_perfil">Mi Perfil</string>
     <string name="sign_out">Desconectarse</string>
+    <!-- Activity Main  -->
     <string name="texto_0">Guatapé(Ant)</string>
     <string name="texto_1">
         Municipio: Guatapé.\n
@@ -54,4 +55,95 @@
     <string name="title_activity_lugares">LugaresActivity</string>
     <string name="action_settings">Settings</string>
     <string name="section_format">Hello World from section: %1$d</string>
+    <string name="ubi">Ubicación :</string>
+    <string name="tel">Teléfono :</string>
+    <string name="url">URL: </string>
+    <string name="horarios">Horarios</string>
+    <!-- Hotel numero uno  -->
+    <string name="HotelUno">Hotel Los Recuerdos</string>
+    <string name="HotelUno_texto_1">Este establecimiento está situado en Guatapé y ofrece
+        vistas al embalse de El Peñol, una gran piscina climatizada al aire libre con
+        servicio de bar, gimnasio y baño turco. La WiFi es gratuita.\n</string>
+    <string name="HotelUno_texto_2">Via Peñol Guatapé km 10, Guatape, Antioquia.</string>
+    <string name="HotelUno_texto_3">(4) 8610650.</string>
+    <string name="HotelUno_texto_4"><a href="http://hotellosrecuerdos.com/inicio">Link</a></string>
+
+    <!-- Hotel numero dos  -->
+    <string name="HotelDos">Villas Cabañas el Retorno</string>
+    <string name="HotelDos_texto_1">El establecimiento Cabañas el Retorno, que ofrece barbacoa y
+        vistas al jardín, está ubicado en Guatapé, en la región de Antioquia, a 47 km de Medellín.
+        Barbosa está a 30 km. Hay WiFi gratuita. Los alojamientos disponen de TV de pantalla plana
+        y cocina equipada con microondas, nevera y cafetera. Cada alojamiento tiene baño privado con
+        artículos de aseo gratuitos. La villa cuenta con aparcamiento privado gratuito.\n</string>
+    <string name="HotelDos_texto_2">Finca el Retorno, Vereda el Roble\n Guatapé, Colombia.</string>
+    <string name="HotelDos_texto_3">(4) 8610259 - (+57) 3008843878</string>
+    <string name="HotelDos_texto_4"><a href="http://www.elretornoresort.net/">Link</a></string>
+
+    <!-- Hotel numero tres  -->
+    <string name="HotelTres">Hotel Benjamar</string>
+    <string name="HotelTres_texto_1">El hotel Benjamar ofrece alojamiento en Guatapé y cuenta con WiFi
+        gratuita en todas las instalaciones. Todas las habitaciones disponen de TV de pantalla plana
+        por cable y baño privado.\n\nTodas aquellas personas que visiten hotel Benjamar podrán
+        confirmar que es el mejor lugar para compartir con la familia y amigos en medio de la naturaleza.\n</string>
+    <string name="HotelTres_texto_2">Cl. 32 #28 - 83, Guatapé, Colombia.</string>
+    <string name="HotelTres_texto_3">(4) 8611400 - (+57) 3128685130</string>
+    <string name="HotelTres_texto_4"><a href="http://hotelbenjamar.com">Link</a></string>
+
+    <!-- Restaurante numero uno  -->
+    <string name="RestUno">El Muelle Resto-Bar</string>
+    <string name="RestUno_texto_1">El Muelle Resto-Bar es un espacio agradable para compartir
+        con amigos y familia de bebidas nacionales e internacionales y el delicioso sazón Argentino.\n</string>
+    <string name="RestUno_texto_2">Malecón de Guatapé - Embalse\n Guatape, Antioquia.</string>
+    <string name="RestUno_texto_3">(+57) 3166603160.</string>
+    <string name="RestUno_texto_4"><a href="https://es-la.facebook.com/elmuellerestobar1/">Link</a></string>
+
+    <!-- Restaurante numero dos  -->
+    <string name="RestDos">Pizzeria De Luigi</string>
+    <string name="RestDos_texto_1">En la pizzería De Luigi encontraras un ambiente familiar, bohemio
+        y económico con el más típico y original estilo Italiano.\n</string>
+    <string name="RestDos_texto_2">Calle 31# 27-10, Guatapé, Colombia.</string>
+    <string name="RestDos_texto_3">(+57) 3208454552</string>
+    <string name="RestDos_texto_4"><a href="https://es-la.facebook.com/Pizzeria-De-Luigi-404940443039593/">Link</a></string>
+
+    <!-- Restaurante numero tres  -->
+    <string name="RestTres">Restaurante La Fogata</string>
+    <string name="RestTres_texto_1">Excelente restaurante en el sector del malecón. Es uno de los pocos restaurantes
+        en el municipio que ofrece una excelente parrilla. Famosos por sus costillas BBQ de la casa.\n</string>
+    <string name="RestTres_texto_2">Cl. 32 #28 - 83, Guatapé, Colombia.</string>
+    <string name="RestTres_texto_3">(4) 8611040</string>
+    <string name="RestTres_texto_4"><a href="https://www.facebook.com/pages/Restaurante-La-Fogata-Guatape/394754463912742">Link</a></string>
+
+    <!-- Que hacer? numero uno  -->
+    <string name="QhUno">Parque Comfama \n La Serpiente</string>
+    <string name="QhUno_texto_1">Imagínate en la mitad de un bosque y al fondo una imponente represa. Respira profundo,
+        cierra tus ojos y deja que tus sentidos se activen. Para que esta experiencia sea real, visita el Parque Comfama Guatapé,
+        acepta el reto en Aguaventura, haz un recorrido ecológico y luego comparte con tu familia de un rico picnic.\n</string>
+    <string name="QhUno_texto_2"> •	Martes a viernes de 9:00 a.m. a 5:00 p.m.\n
+                •	Sábado, domingo y festivos de 9:00 a.m. a 5:30 p.m.\n
+                •	Cuando el lunes es festivo no se presta servicio los martes.\n</string>
+    <string name="QhUno_texto_3">(4) 8610840.</string>
+    <string name="QhUno_texto_4"><a href="http://www.comfama.com/contenidos/servicios/Parquesrecreativos/plan-con-amigos.html">Link</a></string>
+
+    <!-- Que hacer? numero dos  -->
+    <string name="QhDos">Cable Paseo Guatape (Cannopy)</string>
+    <string name="QhDos_texto_1">Somos una empresa prestadora de servicios de turismo, recreación y deportes no convencionales
+        al aire libre, ubicados en el malecón del Municipio de Guatapé, ofreciendo a nuestros visitantes el servicio de cable vuelo,
+        un sistema de transporte aéreo sobre la represa en el cual se puede disfrutar de un hermoso paisaje y otras actividades de
+        entretenimiento, recreación y sana diversión, que aportan al desarrollo turístico y económico del municipio; enfocados
+        en la protección de la vida humana, el medio ambiente, la calidad y seguridad de las instalaciones.\n</string>
+    <string name="QhDos_texto_2"> •	Lunes a Sabado de 9:00 - 12:00, 13:00 - 18:00\n
+         • Domingo 9:00 - 18:00\n.</string>
+    <string name="QhDos_texto_3">(+57) 3166603160</string>
+    <string name="QhDos_texto_4"><a href="https://www.facebook.com/pg/CablePaseoGuatape/about/?ref=page_internal">Link</a></string>
+
+    <!-- Que hacer? numero tres  -->
+    <string name="QhTres">Plazoleta De Los Zocalos</string>
+    <string name="QhTres_texto_1">Los zócalos, aquellas partes inferiores de las fachadas de las casas, suelen pintarse de colores
+        en el municipio de Guatapé desde comienzos del siglo XX. Algunos de los diseños que los visitantes observan allí están
+        relacionados con la historia del pueblo, mientras que en otros se representan girasoles, paisajes y objetos de la
+        vida cotidiana de la gente, como buses escalera.\n</string>
+    <string name="QhTres_texto_2"> Abierto las 24 horas.</string>
+    <string name="QhTres_texto_3">(+57) 3217170104</string>
+    <string name="QhTres_texto_4"><a href="http://www.colombia.travel/es/a-donde-ir/andina/medellin/actividades/mira-los-zocalos-de-guatape">Link</a></string>
+
 </resources>
