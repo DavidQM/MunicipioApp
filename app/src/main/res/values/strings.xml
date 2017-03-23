@@ -46,4 +46,12 @@
     <string name="texto_7">Deportes Acuaticos</string>
     <string name="texto_8">Te Esperamos !</string>
     <string name="act_main">Pagina Principal</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="LugarUno">Zocalos</string>
+    <string name="LugarDos">Parque de la Culebra</string>
+    <string name="title_activity_lugares">LugaresActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
 </resources>
