@@ -33,17 +33,23 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //Validan que los dos campos esten diligenciados
+               //validar que esten llenas las casillas (problema entrega pasada solucionado)
+                if(eUsername.getText().toString().equals("") || ePassword.getText().toString().equals("")){
+                   Toast.makeText(getApplicationContext(), "Error \n Alguno o ambos espacios estan vacios", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    //Validar los datos digitados con los del registro
+                    if (eUsername.getText().toString().equals(username) && ePassword.getText().toString().equals(password)){
+                        intent = new Intent (LoginActivity.this, MainActivity.class);
+                        intent.putExtra("username", username);
+                        intent.putExtra("correo", correo);
+                        startActivity(intent);
+                        setResult(RESULT_OK, intent);
+                        finish();
+                    }else{
+                        Toast.makeText(getApplicationContext(), "Nombre de usuario o contraseña incorrectos", Toast.LENGTH_SHORT).show();
+                    }
 
-                //Validar los datos digitados con los del registro
-                if (eUsername.getText().toString().equals(username) && ePassword.getText().toString().equals(password)){
-                    intent = new Intent (LoginActivity.this, MainActivity.class);
-                    intent.putExtra("username", username);
-                    intent.putExtra("correo", correo);
-                    startActivity(intent);
-                    setResult(RESULT_OK, intent);
-                    finish();
-                }else{
-                    Toast.makeText(getApplicationContext(), "Nombre de usuario o contraseña incorrectos", Toast.LENGTH_SHORT).show();
                 }
 
             }

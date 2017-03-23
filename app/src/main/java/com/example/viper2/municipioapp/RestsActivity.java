@@ -1,5 +1,6 @@
 package com.example.viper2.municipioapp;
 
+import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -18,8 +19,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import android.widget.TextView;
+import android.widget.Toast;
 
-public class LugaresActivity extends AppCompatActivity {
+public class RestsActivity extends AppCompatActivity {
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -36,25 +38,31 @@ public class LugaresActivity extends AppCompatActivity {
      */
     private ViewPager mViewPager;
 
+    String username="",correo="";
+    Intent intent;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lugares);
+        setContentView(R.layout.activity_rests);
+
+        Bundle box =getIntent().getExtras();
+
+        username = String.valueOf(box.getString("username"));
+        correo= String.valueOf(box.getString("correo"));
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar); // configuracion del toolbar
+        setSupportActionBar(toolbar);
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
-        //le damos la propidedad al adaptador de administrar fragments
+
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
-        //conecto el viewpager con el adaptador
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs); //lo traemos
-        tabLayout.setupWithViewPager(mViewPager);
-        //conectamos el el tablayout con el viewpager
 
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
+        tabLayout.setupWithViewPager(mViewPager);
         /*
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -65,13 +73,13 @@ public class LugaresActivity extends AppCompatActivity {
             }
         });
         */
-
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_lugares, menu);
+        getMenuInflater().inflate(R.menu.menu_rests, menu);
         return true;
     }
 
@@ -80,21 +88,46 @@ public class LugaresActivity extends AppCompatActivity {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        switch (item.getItemId()) {
+            case R.id.act_main:
+                intent = new Intent (RestsActivity.this, MainActivity.class);
+                intent.putExtra("username", username);
+                intent.putExtra("correo", correo);
+                startActivity(intent);
+                finish();
+                return true;
+            case R.id.mi_perfil:
+                intent = new Intent (RestsActivity.this, PerfilActivity.class);
+                intent.putExtra("username", username);
+                intent.putExtra("correo", correo);
+                startActivity(intent);
+                finish();
+                return true;
+            case R.id.hotel:
+                intent = new Intent (RestsActivity.this, HotelesActivity.class);
+                intent.putExtra("username", username);
+                intent.putExtra("correo", correo);
+                startActivity(intent);
+                finish();
+                return true;
+            case R.id.qh:
+                intent = new Intent (RestsActivity.this, QhActivity.class);
+                intent.putExtra("username", username);
+                intent.putExtra("correo", correo);
+                startActivity(intent);
+                finish();
+                return true;
+            case R.id.sign_out:
+                intent = new Intent (RestsActivity.this, LoginActivity.class);
+                startActivity(intent);
+                Toast.makeText(getApplicationContext(),"Sección cerrada", Toast.LENGTH_SHORT).show();
+                finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
-
-        return super.onOptionsItemSelected(item);
     }
 
-
-     /**
-     * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
-     * one of the sections/tabs/pages.
-     */
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
         public SectionsPagerAdapter(FragmentManager fm) {
@@ -103,17 +136,18 @@ public class LugaresActivity extends AppCompatActivity {
 
         @Override
         public Fragment getItem(int position) {
-            // getItem is called to instantiate the fragment for the given page.
-            // Return a PlaceholderFragment (defined as a static inner class below).
-           // return PlaceholderFragment.newInstance(position + 1);
-            switch (position){
-                case 0: LugarUnoFragment l1 = new LugarUnoFragment();
-                    return l1;
-                case 1: LugarDosFragment l2 = new LugarDosFragment();
-                    return l2;
-                case 2: LugarDosFragment l3 = new LugarDosFragment();
-                    return l3;
-                default: return null;
+            switch (position) {
+                case 0:
+                    RestUnoFragment r1 = new RestUnoFragment();
+                    return r1;
+                case 1:
+                    RestDosFragment r2 = new RestDosFragment();
+                    return r2;
+                case 2:
+                    RestTresFragment r3 = new RestTresFragment();
+                    return r3;
+                default:
+                    return null;
             }
         }
 
@@ -125,15 +159,15 @@ public class LugaresActivity extends AppCompatActivity {
 
         @Override
         public CharSequence getPageTitle(int position) {
-            switch (position) {
-                case 0:
-                    return "Zocalos";
-                case 1:
-                    return "parque culebra";
-                case 2:
-                   return "comfama";
-            }
-            return null;
+                switch (position) {
+                    case 0: String box1 = getString(R.string.RestUno);
+                        return box1;
+                    case 1: String box2 = getString(R.string.RestDos);
+                        return box2;
+                    case 2: String box3 = getString(R.string.RestTres);
+                        return box3;
+                    default: return null;
+                }
         }
     }
 }

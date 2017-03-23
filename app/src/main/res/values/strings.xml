@@ -145,5 +145,11 @@
     <string name="QhTres_texto_2"> Abierto las 24 horas.</string>
     <string name="QhTres_texto_3">(+57) 3217170104</string>
     <string name="QhTres_texto_4"><a href="http://www.colombia.travel/es/a-donde-ir/andina/medellin/actividades/mira-los-zocalos-de-guatape">Link</a></string>
+    <string name="title_activity_hoteles">HotelesActivity</string>
+    <string name="title_activity_rests">RestsActivity</string>
+    <string name="title_activity_qh">QhActivity</string>
+    <string name="hotel">Hoteles</string>
+    <string name="rest">Restaurantes</string>
+    <string name="qh">Que Hacer?</string>
 
 </resources>
