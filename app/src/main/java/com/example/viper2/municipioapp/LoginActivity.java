@@ -40,7 +40,7 @@ public class LoginActivity extends AppCompatActivity {
                 else {
                     //Validar los datos digitados con los del registro
                     if (eUsername.getText().toString().equals(username) && ePassword.getText().toString().equals(password)){
-                        intent = new Intent (LoginActivity.this, MainActivity.class);
+                        intent = new Intent (LoginActivity.this, ListActivity.class);
                         intent.putExtra("username", username);
                         intent.putExtra("correo", correo);
                         startActivity(intent);
