@@ -8,7 +8,6 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.view.LayoutInflater;
 import android.view.View;
-
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -24,6 +23,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.content.Intent;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class DrawerActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -73,7 +73,7 @@ public class DrawerActivity extends AppCompatActivity
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                //Toast.makeText(getApplicationContext(),String.valueOf(position),Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),String.valueOf(position),Toast.LENGTH_SHORT).show();
                 //String opcion = ((Lista_Entrada)parent.getItemAtPosition(position)).getNombre();
                 //Toast.makeText(getApplicationContext(),opcion,Toast.LENGTH_SHORT).show();
                 switch (position) {
