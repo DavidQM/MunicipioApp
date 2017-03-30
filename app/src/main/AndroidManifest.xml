@@ -12,7 +12,9 @@
             android:name=".SplashActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_splash"
-            android:theme="@style/FullscreenTheme"></activity>
+            android:theme="@style/FullscreenTheme">
+
+        </activity>
         <activity android:name=".MainActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".PerfilActivity" />

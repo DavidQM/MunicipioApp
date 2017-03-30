@@ -1,5 +1,6 @@
 package com.example.viper2.municipioapp;
 
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 
 import android.app.Activity;
@@ -21,11 +22,16 @@ public class MainActivity extends AppCompatActivity {
 
     String username="",correo="";
     Intent intent;
+   // SharedPreferences prefs;//practica 5
+   // SharedPreferences.Editor editor;//practica 5
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+    //    prefs = getSharedPreferences("MisPreferencias",MODE_PRIVATE);//practica 5
+    //    editor = prefs.edit();//practica 5
 
         Bundle box =getIntent().getExtras();
 
@@ -73,6 +79,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
                 Toast.makeText(getApplicationContext(),"Sección cerrada", Toast.LENGTH_SHORT).show();
                 finish();
+                //editor.putInt("login",-1);//sobre escribimos con -1 (cerramos sesion)//practica 5
+                //editor.commit();//practica 5
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

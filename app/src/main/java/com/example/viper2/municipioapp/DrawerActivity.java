@@ -32,14 +32,14 @@ public class DrawerActivity extends AppCompatActivity
     String username="",correo="";
     //String username="david",correo="a@a";
     Intent intent;
-/*
+
     private Lista_Entrada[] datos = new Lista_Entrada[]{
-          //  new Lista_Entrada(R.drawable.guatape_min,"Municipio Guatape","Informacion General del Municipio.","Guatape(Ant)"),
-          //  new Lista_Entrada(R.drawable.hbenjamar_min,"Hoteles","Lugares de Hospedaje.","Guatape(Ant)"),
-          //  new Lista_Entrada(R.drawable.rlafogata_min,"Restaurantes","Diversidad gastronomica con buena mesa.","Guatape(Ant)"),
+            new Lista_Entrada(R.drawable.guatape_min,"Municipio Guatape","Informacion General del Municipio.","Guatape(Ant)"),
+            new Lista_Entrada(R.drawable.hbenjamar_min,"Hoteles","Lugares de Hospedaje.","Guatape(Ant)"),
+            new Lista_Entrada(R.drawable.rlafogata_min,"Restaurantes","Diversidad gastronomica con buena mesa.","Guatape(Ant)"),
             new Lista_Entrada(R.drawable.zocalos_min,"¿Que Hacer?","Planes divertidos y emocionantes.","Guatape(Ant)")
     };
-    */
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,10 +64,11 @@ public class DrawerActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-        /*
+
         listView =(ListView) findViewById(R.id.list);
-        DrawerActivity.Adapter adapter = new DrawerActivity.Adapter(this,datos);
+        Adapter adapter = new Adapter(this,datos);
         listView.setAdapter(adapter);
+
         //Listener
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -77,28 +78,28 @@ public class DrawerActivity extends AppCompatActivity
                 //Toast.makeText(getApplicationContext(),opcion,Toast.LENGTH_SHORT).show();
                 switch (position) {
                     case 0:
-                        intent = new Intent(ListActivity.this, MainActivity.class);
+                        intent = new Intent(DrawerActivity.this, MainActivity.class);
                         intent.putExtra("username", username);
                         intent.putExtra("correo", correo);
                         startActivity(intent);
                         //finish();
                         break;
                     case 1:
-                        intent = new Intent(ListActivity.this, HotelesActivity.class);
+                        intent = new Intent(DrawerActivity.this, HotelesActivity.class);
                         intent.putExtra("username", username);
                         intent.putExtra("correo", correo);
                         startActivity(intent);
                         //finish();
                         break;
                     case 2:
-                        intent = new Intent (ListActivity.this, RestsActivity.class);
+                        intent = new Intent (DrawerActivity.this, RestsActivity.class);
                         intent.putExtra("username", username);
                         intent.putExtra("correo", correo);
                         startActivity(intent);
                         //finish();
                         break;
                     case 3:
-                        intent = new Intent (ListActivity.this, QhActivity.class);
+                        intent = new Intent (DrawerActivity.this, QhActivity.class);
                         intent.putExtra("username", username);
                         intent.putExtra("correo", correo);
                         startActivity(intent);
@@ -110,9 +111,9 @@ public class DrawerActivity extends AppCompatActivity
 
             }
         });
-        */
+
     }
-/*
+
     //@Override
     class Adapter extends ArrayAdapter<Lista_Entrada> {
         // constructor
@@ -129,7 +130,7 @@ public class DrawerActivity extends AppCompatActivity
             // item es el objeto lista
             LayoutInflater inflater = LayoutInflater.from(getContext());//nos traemos la vista
             View item = inflater.inflate(R.layout.list_item,null);// la cargamos
-            /*
+
             TextView nombre = (TextView) item.findViewById(R.id.tNombre);
             nombre.setText(datos[position].getNombre());
 
@@ -147,7 +148,7 @@ public class DrawerActivity extends AppCompatActivity
         }
 
     }
-*/
+
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
