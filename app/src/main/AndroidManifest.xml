@@ -12,9 +12,7 @@
             android:name=".SplashActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_splash"
-            android:theme="@style/FullscreenTheme">
-
-        </activity>
+            android:theme="@style/FullscreenTheme"></activity>
         <activity android:name=".MainActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".PerfilActivity" />
@@ -31,12 +29,16 @@
             android:name=".QhActivity"
             android:label="@string/title_activity_qh"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".ListActivity">
-
-        </activity>
+        <activity android:name=".ListActivity"></activity>
         <activity
             android:name=".DrawerActivity"
             android:label="@string/title_activity_drawer"
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
+        <activity
+            android:name=".HotelesActivityD"
+            android:label="@string/title_activity_hoteles_d"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
