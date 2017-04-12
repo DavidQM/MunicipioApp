@@ -156,5 +156,9 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="title_activity_hoteles_d">HotelesActivityD</string>
+    <string name="title_activity_rest_d">RestActivityD</string>
+    <string name="pmain">Pagina Principal</string>
+    <string name="list">Lista General</string>
+    <string name="about">About</string>
 
 </resources>

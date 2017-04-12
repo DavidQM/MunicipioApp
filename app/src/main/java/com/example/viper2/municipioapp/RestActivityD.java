@@ -20,36 +20,41 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-public class HotelesActivityD extends AppCompatActivity
+public class RestActivityD extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    private SectionsPagerAdapter mSectionsPagerAdapter;
+
+
+    private ViewPager mViewPager;
+
+    //String username="",correo="";
+    //Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_hoteles_d);
+        setContentView(R.layout.activity_rest_d);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        // sacado de HotelesActivity
 
-       // Bundle box =getIntent().getExtras();
-
-        //username = String.valueOf(box.getString("username"));
-        //correo= String.valueOf(box.getString("correo"));
+        /*
+        Bundle box =getIntent().getExtras();
+        username = String.valueOf(box.getString("username"));
+        correo= String.valueOf(box.getString("correo"));
+        */
 
         //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        //setSupportActionBar(toolbar);// configuracion del toolbar
+        //setSupportActionBar(toolbar);
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
-        //le damos la propidedad al adaptador de administrar fragments
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
-        //conecto el viewpager con el adaptador
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);  //lo traemos
+
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
-        //conectamos el el tablayout con el viewpager
-        //fin de HotelesActivity
         /*
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -68,7 +73,6 @@ public class HotelesActivityD extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
     }
 
     @Override
@@ -84,7 +88,7 @@ public class HotelesActivityD extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.hoteles_activity_d, menu);
+        getMenuInflater().inflate(R.menu.rest_activity_d, menu);
         return true;
     }
 
@@ -130,97 +134,42 @@ public class HotelesActivityD extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-    // copia del codigo de HotelesActivity
-    private SectionsPagerAdapter mSectionsPagerAdapter;
-
-    /**
-     * The {@link ViewPager} that will host the section contents.
-     */
-    private ViewPager mViewPager;
-
-    String username="",correo="";
-    Intent intent;
     /*
-    @Override
-
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_hoteles);
-
-        Bundle box =getIntent().getExtras();
-
-        username = String.valueOf(box.getString("username"));
-        correo= String.valueOf(box.getString("correo"));
-
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);// configuracion del toolbar
-        // Create the adapter that will return a fragment for each of the three
-        // primary sections of the activity.
-        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
-        //le damos la propidedad al adaptador de administrar fragments
-        // Set up the ViewPager with the sections adapter.
-        mViewPager = (ViewPager) findViewById(R.id.container);
-        mViewPager.setAdapter(mSectionsPagerAdapter);
-        //conecto el viewpager con el adaptador
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);  //lo traemos
-        tabLayout.setupWithViewPager(mViewPager);
-        //conectamos el el tablayout con el viewpager
-
-        //comentar desde aqui
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-
-    }
-
-    */
-    /*
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_hoteles, menu);
-        return true;
-    }
-    */
-    /*
-    @Override
-        public boolean onOptionsItemSelected(MenuItem item) {
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
         switch (item.getItemId()) {
             case R.id.act_main:
-                intent = new Intent (HotelesActivityD.this, MainActivity.class);
+                intent = new Intent (RestsActivity.this, MainActivity.class);
                 intent.putExtra("username", username);
                 intent.putExtra("correo", correo);
                 startActivity(intent);
                 finish();
                 return true;
             case R.id.mi_perfil:
-                intent = new Intent (HotelesActivityD.this, PerfilActivity.class);
+                intent = new Intent (RestsActivity.this, PerfilActivity.class);
                 intent.putExtra("username", username);
                 intent.putExtra("correo", correo);
                 startActivity(intent);
                 finish();
                 return true;
-            case R.id.rest:
-                intent = new Intent (HotelesActivityD.this, RestsActivity.class);
+            case R.id.hotel:
+                intent = new Intent (RestsActivity.this, HotelesActivity.class);
                 intent.putExtra("username", username);
                 intent.putExtra("correo", correo);
                 startActivity(intent);
                 finish();
                 return true;
             case R.id.qh:
-                intent = new Intent (HotelesActivityD.this, QhActivity.class);
+                intent = new Intent (RestsActivity.this, QhActivity.class);
                 intent.putExtra("username", username);
                 intent.putExtra("correo", correo);
                 startActivity(intent);
                 finish();
                 return true;
             case R.id.sign_out:
-                intent = new Intent (HotelesActivityD.this, LoginActivity.class);
+                intent = new Intent (RestsActivity.this, LoginActivity.class);
                 startActivity(intent);
                 Toast.makeText(getApplicationContext(),"Sección cerrada", Toast.LENGTH_SHORT).show();
                 finish();
@@ -229,8 +178,7 @@ public class HotelesActivityD extends AppCompatActivity
                 return super.onOptionsItemSelected(item);
         }
     }
-        */
-
+    */
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
         public SectionsPagerAdapter(FragmentManager fm) {
@@ -239,19 +187,16 @@ public class HotelesActivityD extends AppCompatActivity
 
         @Override
         public Fragment getItem(int position) {
-            // getItem is called to instantiate the fragment for the given page.
-            // Return a PlaceholderFragment (defined as a static inner class below).
-            //return PlaceholderFragment.newInstance(position + 1);
             switch (position) {
                 case 0:
-                    HotelUnoFragment h1 = new HotelUnoFragment();
-                    return h1;
+                    RestUnoFragment r1 = new RestUnoFragment();
+                    return r1;
                 case 1:
-                    HotelDosFragment h2 = new HotelDosFragment();
-                    return h2;
+                    RestDosFragment r2 = new RestDosFragment();
+                    return r2;
                 case 2:
-                    HotelTresFragment h3 = new HotelTresFragment();
-                    return h3;
+                    RestTresFragment r3 = new RestTresFragment();
+                    return r3;
                 default:
                     return null;
             }
@@ -266,16 +211,14 @@ public class HotelesActivityD extends AppCompatActivity
         @Override
         public CharSequence getPageTitle(int position) {
             switch (position) {
-                case 0: String box1 = getString(R.string.HotelUno);
+                case 0: String box1 = getString(R.string.RestUno);
                     return box1;
-                case 1: String box2 = getString(R.string.HotelDos);
+                case 1: String box2 = getString(R.string.RestDos);
                     return box2;
-                case 2: String box3 = getString(R.string.HotelTres);
+                case 2: String box3 = getString(R.string.RestTres);
                     return box3;
                 default: return null;
             }
         }
     }
 }
-
-
