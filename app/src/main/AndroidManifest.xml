@@ -19,29 +19,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
         <activity android:name=".LoginActivity" />
-        <activity android:name=".PerfilActivity" />
         <activity android:name=".RegistroActivity" />
-        <activity
-            android:name=".HotelesActivity"
-            android:label="@string/title_activity_hoteles"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".RestsActivity"
-            android:label="@string/title_activity_rests"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".QhActivity"
-            android:label="@string/title_activity_qh"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".ListActivity" />
         <activity
             android:name=".HotelesActivityD"
             android:label="@string/title_activity_hoteles_d"
-            android:theme="@style/AppTheme.NoActionBar" >
-
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".RestActivityD"
             android:label="@string/title_activity_rest_d"
@@ -59,11 +42,11 @@
             android:label="@string/title_activity_perfil_d"
             android:theme="@style/AppTheme.NoActionBar">
 
-        </activity>
+    </activity>
         <activity
             android:name=".ListActivityD"
             android:label="@string/title_activity_list_d"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 </manifest>

@@ -1,6 +1,7 @@
 package com.example.viper2.municipioapp;
 
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -13,6 +14,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class PerfilActivityD extends AppCompatActivity
@@ -20,18 +23,25 @@ public class PerfilActivityD extends AppCompatActivity
 
     String username="",correo="";
     Intent intent;
+    ImageView fperfil;
+    TextView eUsername,eCorreo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_d);
+        setContentView(R.layout.activity_perfil_d);
+
+        eUsername = (TextView) findViewById(R.id.eUsernameD);
+        eCorreo = (TextView) findViewById(R.id.eCorreoD);
+        fperfil = (ImageView) findViewById(R.id.fperfilD);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         Bundle box =getIntent().getExtras();
-
         username = String.valueOf(box.getString("username"));
         correo= String.valueOf(box.getString("correo"));
+
         /*
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -50,6 +60,21 @@ public class PerfilActivityD extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        ((TextView) findViewById(R.id.eUsernameD)).setText(username);
+        ((TextView) findViewById(R.id.eCorreoD)).setText(correo);
+
+        Resources res = getResources();
+        int resourceId = res.getIdentifier(username, "drawable", getPackageName());
+
+        if(resourceId == 0)
+        {
+            fperfil.setImageResource(R.drawable.user);
+
+        }else {
+            fperfil.setImageResource(resourceId);
+        }
+
     }
 
     @Override
@@ -60,28 +85,6 @@ public class PerfilActivityD extends AppCompatActivity
         } else {
             super.onBackPressed();
         }
-    }
-    /*
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.perfil_activity_d, menu);
-        return true;
-    }
-    */
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 
     @SuppressWarnings("StatementWithEmptyBody")

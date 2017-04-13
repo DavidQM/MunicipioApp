@@ -24,7 +24,7 @@ tools:showIn="@layout/app_bar_perfil_activity_d">
     android:layout_height="wrap_content"
     android:layout_gravity="center"
     android:src="@drawable/guatape"
-    android:id="@+id/fperfil"
+    android:id="@+id/fperfilD"
     android:layout_margin="10dp"/>
 <TextView
     android:layout_width="match_parent"
@@ -33,7 +33,7 @@ tools:showIn="@layout/app_bar_perfil_activity_d">
     android:gravity="center"
     android:hint="@string/username"
     android:textSize="20dp"
-    android:id="@+id/eUsername"/>
+    android:id="@+id/eUsernameD"/>
 <TextView
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -41,5 +41,5 @@ tools:showIn="@layout/app_bar_perfil_activity_d">
     android:gravity="center"
     android:textSize="20dp"
     android:hint="@string/correo"
-    android:id="@+id/eCorreo"/>
+    android:id="@+id/eCorreoD"/>
 </LinearLayout>
