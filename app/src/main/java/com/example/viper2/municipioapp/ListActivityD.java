@@ -25,7 +25,7 @@ import android.content.Intent;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class DrawerActivity extends AppCompatActivity
+public class ListActivityD extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     ListView listView;
@@ -43,7 +43,7 @@ public class DrawerActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_drawer);
+        setContentView(R.layout.activity_list_d);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         /*
@@ -73,37 +73,37 @@ public class DrawerActivity extends AppCompatActivity
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getApplicationContext(),String.valueOf(position),Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(),String.valueOf(position),Toast.LENGTH_SHORT).show();
                 //String opcion = ((Lista_Entrada)parent.getItemAtPosition(position)).getNombre();
                 //Toast.makeText(getApplicationContext(),opcion,Toast.LENGTH_SHORT).show();
                 switch (position) {
                     case 0:
-                        intent = new Intent(DrawerActivity.this, MainActivity.class);
+                        intent = new Intent(ListActivityD.this, MainActivityD.class);
                         intent.putExtra("username", username);
                         intent.putExtra("correo", correo);
                         startActivity(intent);
-                        //finish();
+                        finish();
                         break;
                     case 1:
-                        intent = new Intent(DrawerActivity.this, HotelesActivity.class);
+                        intent = new Intent(ListActivityD.this, HotelesActivityD.class);
                         intent.putExtra("username", username);
                         intent.putExtra("correo", correo);
                         startActivity(intent);
-                        //finish();
+                        finish();
                         break;
                     case 2:
-                        intent = new Intent (DrawerActivity.this, RestsActivity.class);
+                        intent = new Intent (ListActivityD.this, RestActivityD.class);
                         intent.putExtra("username", username);
                         intent.putExtra("correo", correo);
                         startActivity(intent);
-                        //finish();
+                        finish();
                         break;
                     case 3:
-                        intent = new Intent (DrawerActivity.this, QhActivity.class);
+                        intent = new Intent (ListActivityD.this, QhActivityD.class);
                         intent.putExtra("username", username);
                         intent.putExtra("correo", correo);
                         startActivity(intent);
-                        //finish();
+                        finish();
                         break;
                     default:
                         break;
@@ -114,7 +114,6 @@ public class DrawerActivity extends AppCompatActivity
 
     }
 
-    //@Override
     class Adapter extends ArrayAdapter<Lista_Entrada> {
         // constructor
         public Adapter(@NonNull Context context, Lista_Entrada[] datos) {
@@ -158,14 +157,14 @@ public class DrawerActivity extends AppCompatActivity
             super.onBackPressed();
         }
     }
-
+    /*
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.drawer, menu);
+        getMenuInflater().inflate(R.menu.list_activity_d, menu);
         return true;
     }
-
+    */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -185,24 +184,58 @@ public class DrawerActivity extends AppCompatActivity
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
-        int id = item.getItemId();
-
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+        switch (item.getItemId()) {
+            case R.id.nav_pmain:
+                intent = new Intent (ListActivityD.this, MainActivityD.class);
+                intent.putExtra("username", username);
+                intent.putExtra("correo", correo);
+                startActivity(intent);
+                finish();
+                return true;
+            case R.id.nav_list:
+                intent = new Intent (ListActivityD.this, ListActivityD.class);
+                intent.putExtra("username", username);
+                intent.putExtra("correo", correo);
+                startActivity(intent);
+                finish();
+                return true;
+            case R.id.nav_hotel:
+                intent = new Intent (ListActivityD.this, HotelesActivityD.class);
+                intent.putExtra("username", username);
+                intent.putExtra("correo", correo);
+                startActivity(intent);
+                finish();
+                return true;
+            case R.id.nav_rest:
+                intent = new Intent (ListActivityD.this, RestActivityD.class);
+                intent.putExtra("username", username);
+                intent.putExtra("correo", correo);
+                startActivity(intent);
+                finish();
+                return true;
+            case R.id.nav_qh:
+                intent = new Intent (ListActivityD.this, QhActivityD.class);
+                intent.putExtra("username", username);
+                intent.putExtra("correo", correo);
+                startActivity(intent);
+                finish();
+                return true;
+            case R.id.nav_mi_perfil:
+                intent = new Intent (ListActivityD.this, PerfilActivityD.class);
+                intent.putExtra("username", username);
+                intent.putExtra("correo", correo);
+                startActivity(intent);
+                finish();
+                return true;
+            case R.id.nav_sing_out:
+                intent = new Intent (ListActivityD.this, LoginActivity.class);
+                startActivity(intent);
+                Toast.makeText(getApplicationContext(),"Sección cerrada", Toast.LENGTH_SHORT).show();
+                finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
-        return true;
     }
 }

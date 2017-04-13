@@ -20,6 +20,6 @@
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header_hoteles_activity_d"
-        app:menu="@menu/activity_hoteles_d_drawer" />
+        app:menu="@menu/activity_menu_all_drawer"/>
 
 </android.support.v4.widget.DrawerLayout>

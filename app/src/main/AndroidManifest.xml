@@ -12,7 +12,13 @@
             android:name=".SplashActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_splash"
-            android:theme="@style/FullscreenTheme"></activity>
+            android:theme="@style/FullscreenTheme" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".MainActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".PerfilActivity" />
@@ -31,25 +37,33 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".ListActivity" />
         <activity
-            android:name=".DrawerActivity"
-            android:label="@string/title_activity_drawer"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity
             android:name=".HotelesActivityD"
             android:label="@string/title_activity_hoteles_d"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar" >
 
         </activity>
         <activity
             android:name=".RestActivityD"
             android:label="@string/title_activity_rest_d"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".QhActivityD"
+            android:label="@string/title_activity_qh_d"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".MainActivityD"
+            android:label="@string/title_activity_main_d"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".PerfilActivityD"
+            android:label="@string/title_activity_perfil_d"
             android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
+        <activity
+            android:name=".ListActivityD"
+            android:label="@string/title_activity_list_d"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

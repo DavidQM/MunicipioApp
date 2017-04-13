@@ -23,33 +23,31 @@ import android.widget.Toast;
 public class HotelesActivityD extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    private SectionsPagerAdapter mSectionsPagerAdapter;
+    private ViewPager mViewPager;
+
+    String username="",correo="";
+    Intent intent;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hoteles_d);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        // sacado de HotelesActivity
 
-       // Bundle box =getIntent().getExtras();
+        Bundle box =getIntent().getExtras();
+        username = String.valueOf(box.getString("username"));
+        correo= String.valueOf(box.getString("correo"));
 
-        //username = String.valueOf(box.getString("username"));
-        //correo= String.valueOf(box.getString("correo"));
-
-        //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        //setSupportActionBar(toolbar);// configuracion del toolbar
-        // Create the adapter that will return a fragment for each of the three
-        // primary sections of the activity.
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
-        //le damos la propidedad al adaptador de administrar fragments
-        // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
-        //conecto el viewpager con el adaptador
+
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);  //lo traemos
         tabLayout.setupWithViewPager(mViewPager);
-        //conectamos el el tablayout con el viewpager
-        //fin de HotelesActivity
+
         /*
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -60,6 +58,7 @@ public class HotelesActivityD extends AppCompatActivity
             }
         });
         */
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -80,13 +79,14 @@ public class HotelesActivityD extends AppCompatActivity
             super.onBackPressed();
         }
     }
-
+    /*
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.hoteles_activity_d, menu);
         return true;
     }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -102,124 +102,55 @@ public class HotelesActivityD extends AppCompatActivity
 
         return super.onOptionsItemSelected(item);
     }
-
+ */
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
-        int id = item.getItemId();
 
-        if (id == R.id.nav_pmain) {
-            Toast.makeText(getApplicationContext(),"main", Toast.LENGTH_SHORT).show();
-            // Handle the camera action
-        } else if (id == R.id.nav_list) {Toast.makeText(getApplicationContext(),"list", Toast.LENGTH_SHORT).show();
-
-        } else if (id == R.id.nav_hotel) {Toast.makeText(getApplicationContext(),"hotel", Toast.LENGTH_SHORT).show();
-
-        } else if (id == R.id.nav_rest) {Toast.makeText(getApplicationContext(),"rest", Toast.LENGTH_SHORT).show();
-
-        } else if (id == R.id.nav_qh) {Toast.makeText(getApplicationContext(),"qh", Toast.LENGTH_SHORT).show();
-
-        }  else if (id == R.id.nav_mi_perfil) {Toast.makeText(getApplicationContext(),"mi perfil", Toast.LENGTH_SHORT).show();
-
-        }else if (id == R.id.nav_about) {Toast.makeText(getApplicationContext(),"About", Toast.LENGTH_SHORT).show();
-
-        }
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
-        return true;
-    }
-    // copia del codigo de HotelesActivity
-    private SectionsPagerAdapter mSectionsPagerAdapter;
-
-    /**
-     * The {@link ViewPager} that will host the section contents.
-     */
-    private ViewPager mViewPager;
-
-    String username="",correo="";
-    Intent intent;
-    /*
-    @Override
-
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_hoteles);
-
-        Bundle box =getIntent().getExtras();
-
-        username = String.valueOf(box.getString("username"));
-        correo= String.valueOf(box.getString("correo"));
-
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);// configuracion del toolbar
-        // Create the adapter that will return a fragment for each of the three
-        // primary sections of the activity.
-        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
-        //le damos la propidedad al adaptador de administrar fragments
-        // Set up the ViewPager with the sections adapter.
-        mViewPager = (ViewPager) findViewById(R.id.container);
-        mViewPager.setAdapter(mSectionsPagerAdapter);
-        //conecto el viewpager con el adaptador
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);  //lo traemos
-        tabLayout.setupWithViewPager(mViewPager);
-        //conectamos el el tablayout con el viewpager
-
-        //comentar desde aqui
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-
-    }
-
-    */
-    /*
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_hoteles, menu);
-        return true;
-    }
-    */
-    /*
-    @Override
-        public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.act_main:
-                intent = new Intent (HotelesActivityD.this, MainActivity.class);
+            case R.id.nav_pmain:
+                intent = new Intent (HotelesActivityD.this, MainActivityD.class);
                 intent.putExtra("username", username);
                 intent.putExtra("correo", correo);
                 startActivity(intent);
                 finish();
                 return true;
-            case R.id.mi_perfil:
-                intent = new Intent (HotelesActivityD.this, PerfilActivity.class);
+            case R.id.nav_list:
+                intent = new Intent (HotelesActivityD.this, ListActivityD.class);
                 intent.putExtra("username", username);
                 intent.putExtra("correo", correo);
                 startActivity(intent);
                 finish();
                 return true;
-            case R.id.rest:
-                intent = new Intent (HotelesActivityD.this, RestsActivity.class);
+            case R.id.nav_hotel:
+                intent = new Intent (HotelesActivityD.this, HotelesActivityD.class);
                 intent.putExtra("username", username);
                 intent.putExtra("correo", correo);
                 startActivity(intent);
                 finish();
                 return true;
-            case R.id.qh:
-                intent = new Intent (HotelesActivityD.this, QhActivity.class);
+            case R.id.nav_rest:
+                intent = new Intent (HotelesActivityD.this, RestActivityD.class);
                 intent.putExtra("username", username);
                 intent.putExtra("correo", correo);
                 startActivity(intent);
                 finish();
                 return true;
-            case R.id.sign_out:
+            case R.id.nav_qh:
+                intent = new Intent (HotelesActivityD.this, QhActivityD.class);
+                intent.putExtra("username", username);
+                intent.putExtra("correo", correo);
+                startActivity(intent);
+                finish();
+                return true;
+            case R.id.nav_mi_perfil:
+                intent = new Intent (HotelesActivityD.this, PerfilActivityD.class);
+                intent.putExtra("username", username);
+                intent.putExtra("correo", correo);
+                startActivity(intent);
+                finish();
+                return true;
+            case R.id.nav_sing_out:
                 intent = new Intent (HotelesActivityD.this, LoginActivity.class);
                 startActivity(intent);
                 Toast.makeText(getApplicationContext(),"Sección cerrada", Toast.LENGTH_SHORT).show();
@@ -228,8 +159,8 @@ public class HotelesActivityD extends AppCompatActivity
             default:
                 return super.onOptionsItemSelected(item);
         }
+
     }
-        */
 
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
 

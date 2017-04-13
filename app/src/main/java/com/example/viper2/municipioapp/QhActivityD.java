@@ -20,7 +20,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-public class RestActivityD extends AppCompatActivity
+public class QhActivityD extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private SectionsPagerAdapter mSectionsPagerAdapter;
@@ -32,23 +32,22 @@ public class RestActivityD extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_rest_d);
+        setContentView(R.layout.activity_qh_d);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
         Bundle box =getIntent().getExtras();
         username = String.valueOf(box.getString("username"));
         correo= String.valueOf(box.getString("correo"));
-
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
+        //le damos la propidedad al adaptador de administrar fragments
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
-
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
+        //conecto el viewpager con el adaptador
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);  //lo traemos
         tabLayout.setupWithViewPager(mViewPager);
-
-         /*
+        //conectamos el el tablayout con el viewpager
+        /*
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,7 +57,6 @@ public class RestActivityD extends AppCompatActivity
             }
         });
         */
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -78,11 +76,11 @@ public class RestActivityD extends AppCompatActivity
             super.onBackPressed();
         }
     }
-
+    /*
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.rest_activity_d, menu);
+        getMenuInflater().inflate(R.menu.qh_activity_d, menu);
         return true;
     }
 
@@ -100,56 +98,56 @@ public class RestActivityD extends AppCompatActivity
 
         return super.onOptionsItemSelected(item);
     }
-
+    */
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         switch (item.getItemId()) {
             case R.id.nav_pmain:
-                intent = new Intent (RestActivityD.this, MainActivityD.class);
+                intent = new Intent (QhActivityD.this, MainActivityD.class);
                 intent.putExtra("username", username);
                 intent.putExtra("correo", correo);
                 startActivity(intent);
                 finish();
                 return true;
             case R.id.nav_list:
-                intent = new Intent (RestActivityD.this, ListActivityD.class);
+                intent = new Intent (QhActivityD.this, ListActivityD.class);
                 intent.putExtra("username", username);
                 intent.putExtra("correo", correo);
                 startActivity(intent);
                 finish();
                 return true;
             case R.id.nav_hotel:
-                intent = new Intent (RestActivityD.this, HotelesActivityD.class);
+                intent = new Intent (QhActivityD.this, HotelesActivityD.class);
                 intent.putExtra("username", username);
                 intent.putExtra("correo", correo);
                 startActivity(intent);
                 finish();
                 return true;
             case R.id.nav_rest:
-                intent = new Intent (RestActivityD.this, RestActivityD.class);
+                intent = new Intent (QhActivityD.this, RestActivityD.class);
                 intent.putExtra("username", username);
                 intent.putExtra("correo", correo);
                 startActivity(intent);
                 finish();
                 return true;
             case R.id.nav_qh:
-                intent = new Intent (RestActivityD.this, QhActivityD.class);
+                intent = new Intent (QhActivityD.this, QhActivityD.class);
                 intent.putExtra("username", username);
                 intent.putExtra("correo", correo);
                 startActivity(intent);
                 finish();
                 return true;
             case R.id.nav_mi_perfil:
-                intent = new Intent (RestActivityD.this, PerfilActivityD.class);
+                intent = new Intent (QhActivityD.this, PerfilActivityD.class);
                 intent.putExtra("username", username);
                 intent.putExtra("correo", correo);
                 startActivity(intent);
                 finish();
                 return true;
             case R.id.nav_sing_out:
-                intent = new Intent (RestActivityD.this, LoginActivity.class);
+                intent = new Intent (QhActivityD.this, LoginActivity.class);
                 startActivity(intent);
                 Toast.makeText(getApplicationContext(),"Sección cerrada", Toast.LENGTH_SHORT).show();
                 finish();
@@ -168,16 +166,19 @@ public class RestActivityD extends AppCompatActivity
 
         @Override
         public Fragment getItem(int position) {
+            // getItem is called to instantiate the fragment for the given page.
+            // Return a PlaceholderFragment (defined as a static inner class below).
+            //return PlaceholderFragment.newInstance(position + 1);
             switch (position) {
                 case 0:
-                    RestUnoFragment r1 = new RestUnoFragment();
-                    return r1;
+                    QhUnoFragment q1 = new QhUnoFragment();
+                    return q1;
                 case 1:
-                    RestDosFragment r2 = new RestDosFragment();
-                    return r2;
+                    QhDosFragment q2 = new QhDosFragment();
+                    return q2;
                 case 2:
-                    RestTresFragment r3 = new RestTresFragment();
-                    return r3;
+                    QhTresFragment q3 = new QhTresFragment();
+                    return q3;
                 default:
                     return null;
             }
@@ -192,11 +193,11 @@ public class RestActivityD extends AppCompatActivity
         @Override
         public CharSequence getPageTitle(int position) {
             switch (position) {
-                case 0: String box1 = getString(R.string.RestUno);
+                case 0: String box1 = getString(R.string.QhUno);
                     return box1;
-                case 1: String box2 = getString(R.string.RestDos);
+                case 1: String box2 = getString(R.string.QhDos);
                     return box2;
-                case 2: String box3 = getString(R.string.RestTres);
+                case 2: String box3 = getString(R.string.QhTres);
                     return box3;
                 default: return null;
             }
