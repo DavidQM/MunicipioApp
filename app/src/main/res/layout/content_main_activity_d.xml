@@ -8,10 +8,9 @@
     tools:context="com.example.viper2.municipioapp.MainActivityD"
     tools:showIn="@layout/app_bar_main_activity_d">
     <ScrollView
-        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:fillViewport="true"> <!--IMPORTANT otherwise backgrnd img. will not fill the whole screen -->
+        android:fillViewport="true">
 
         <GridLayout
             android:layout_width="match_parent"
@@ -128,5 +127,4 @@
                 android:layout_margin="10dp"/>
         </GridLayout>
     </ScrollView>
-
 </android.support.constraint.ConstraintLayout>
