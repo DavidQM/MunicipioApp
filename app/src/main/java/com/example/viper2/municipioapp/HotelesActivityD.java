@@ -27,6 +27,7 @@ public class HotelesActivityD extends AppCompatActivity
 
     private SectionsPagerAdapter mSectionsPagerAdapter;
     private ViewPager mViewPager;
+    TextView textViewDrawer1,textViewDrawer2;
 
     String username="",correo="";
     Intent intent;
@@ -35,6 +36,10 @@ public class HotelesActivityD extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hoteles_d);
+
+        textViewDrawer1 = (TextView) findViewById(R.id.textViewDrawer1);
+        textViewDrawer2 = (TextView) findViewById(R.id.textViewDrawer2);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -59,6 +64,9 @@ public class HotelesActivityD extends AppCompatActivity
             }
         });
         */
+
+        //((TextView) findViewById(R.id.textViewDrawer1)).setText(username);
+        //((TextView) findViewById(R.id.textViewDrawer2)).setText(correo);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(

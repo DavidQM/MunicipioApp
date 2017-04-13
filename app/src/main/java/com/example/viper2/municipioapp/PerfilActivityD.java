@@ -25,12 +25,15 @@ public class PerfilActivityD extends AppCompatActivity
     Intent intent;
     ImageView fperfil;
     TextView eUsername,eCorreo;
+    TextView textViewDrawer1,textViewDrawer2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil_d);
 
+        textViewDrawer1 = (TextView) findViewById(R.id.P_textViewDrawer1);
+        textViewDrawer2 = (TextView) findViewById(R.id.P_textViewDrawer2);
         eUsername = (TextView) findViewById(R.id.eUsernameD);
         eCorreo = (TextView) findViewById(R.id.eCorreoD);
         fperfil = (ImageView) findViewById(R.id.fperfilD);
@@ -52,6 +55,7 @@ public class PerfilActivityD extends AppCompatActivity
             }
         });
         */
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -61,8 +65,10 @@ public class PerfilActivityD extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        ((TextView) findViewById(R.id.eUsernameD)).setText(username);
-        ((TextView) findViewById(R.id.eCorreoD)).setText(correo);
+        //textViewDrawer1.setText(username);
+        //((TextView) findViewById(R.id.P_textViewDrawer2)).setText(correo);
+        eUsername.setText(username);
+        eCorreo.setText(correo);
 
         Resources res = getResources();
         int resourceId = res.getIdentifier(username, "drawable", getPackageName());
@@ -80,6 +86,7 @@ public class PerfilActivityD extends AppCompatActivity
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {

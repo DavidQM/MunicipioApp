@@ -36,13 +36,11 @@
         <activity
             android:name=".MainActivityD"
             android:label="@string/title_activity_main_d"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".PerfilActivityD"
             android:label="@string/title_activity_perfil_d"
-            android:theme="@style/AppTheme.NoActionBar">
-
-    </activity>
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".ListActivityD"
             android:label="@string/title_activity_list_d"

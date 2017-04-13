@@ -18,6 +18,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class QhActivityD extends AppCompatActivity
@@ -26,6 +27,8 @@ public class QhActivityD extends AppCompatActivity
     private SectionsPagerAdapter mSectionsPagerAdapter;
     private ViewPager mViewPager;
 
+    TextView textViewDrawer1,textViewDrawer2;
+
     String username="",correo="";
     Intent intent;
 
@@ -33,6 +36,10 @@ public class QhActivityD extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_qh_d);
+
+        textViewDrawer1 = (TextView) findViewById(R.id.textViewDrawer1);
+        textViewDrawer2 = (TextView) findViewById(R.id.textViewDrawer2);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         Bundle box =getIntent().getExtras();
@@ -57,6 +64,10 @@ public class QhActivityD extends AppCompatActivity
             }
         });
         */
+
+        //((TextView) findViewById(R.id.textViewDrawer1)).setText(username);
+        //((TextView) findViewById(R.id.textViewDrawer2)).setText(correo);
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);

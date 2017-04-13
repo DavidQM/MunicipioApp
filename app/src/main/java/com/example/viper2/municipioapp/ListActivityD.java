@@ -32,6 +32,7 @@ public class ListActivityD extends AppCompatActivity
     String username="",correo="";
     //String username="david",correo="a@a";
     Intent intent;
+    TextView textViewDrawer1,textViewDrawer2;
 
     private Lista_Entrada[] datos = new Lista_Entrada[]{
             new Lista_Entrada(R.drawable.guatape_min,"Municipio Guatape","Informacion General del Municipio.","Guatape(Ant)"),
@@ -44,6 +45,10 @@ public class ListActivityD extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_d);
+
+        textViewDrawer1 = (TextView) findViewById(R.id.textViewDrawer1);
+        textViewDrawer2 = (TextView) findViewById(R.id.textViewDrawer2);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         /*
@@ -56,6 +61,10 @@ public class ListActivityD extends AppCompatActivity
             }
         });
         */
+
+        //((TextView) findViewById(R.id.textViewDrawer1)).setText(username);
+        //((TextView) findViewById(R.id.textViewDrawer2)).setText(correo);
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
