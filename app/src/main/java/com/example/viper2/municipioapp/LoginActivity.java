@@ -11,6 +11,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.StringWriter;
+
 //import org.w3c.dom.Text;
 
 public class LoginActivity extends AppCompatActivity {
@@ -112,6 +114,7 @@ public class LoginActivity extends AppCompatActivity {
             editor.putString("mail",correo);//practica 5
             editor.commit();//practica 5
             */
+
         }
         if (requestCode==1234 && resultCode == RESULT_CANCELED){
             Toast.makeText(this, "Registro cancelado", Toast.LENGTH_SHORT).show();

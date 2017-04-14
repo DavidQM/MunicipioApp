@@ -45,6 +45,9 @@ public class PerfilActivityD extends AppCompatActivity
         username = String.valueOf(box.getString("username"));
         correo= String.valueOf(box.getString("correo"));
 
+        //Toast.makeText(getApplicationContext(),username,Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getApplicationContext(),correo,Toast.LENGTH_SHORT).show();
+
         /*
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
