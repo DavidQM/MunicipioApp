@@ -164,5 +164,6 @@
     <string name="title_activity_main_d">MainActivityD</string>
     <string name="title_activity_perfil_d">PerfilActivityD</string>
     <string name="title_activity_list_d">ListActivityD</string>
+    <string name="title_activity_maps">Map</string>
 
 </resources>
