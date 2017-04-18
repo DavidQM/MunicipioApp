@@ -7,10 +7,6 @@
             android:icon="@drawable/ic_menu_main"
             android:title="@string/pmain" />
         <item
-            android:id="@+id/nav_list"
-            android:icon="@drawable/ic_menu_list"
-            android:title="@string/list" />
-        <item
             android:id="@+id/nav_hotel"
             android:icon="@drawable/ic_menu_hotel"
             android:title="@string/hotel" />
@@ -22,6 +18,10 @@
             android:id="@+id/nav_qh"
             android:icon="@drawable/ic_menu_qh"
             android:title="@string/qh" />
+        <item
+            android:id="@+id/nav_list"
+            android:icon="@drawable/ic_menu_map"
+            android:title="@string/mapa" />
 
     </group>
 

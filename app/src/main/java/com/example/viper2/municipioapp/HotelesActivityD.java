@@ -32,10 +32,7 @@ public class HotelesActivityD extends AppCompatActivity
     TextView textViewDrawer1,textViewDrawer2;
 
     String username="",correo="";
-    Intent intent,intent2;
-
-    String Lon="",Lat="";
-    Button bhunomap;
+    Intent intent;
 
     SharedPreferences prefs;//nombre de las preferencias
     SharedPreferences.Editor editor;
@@ -51,15 +48,13 @@ public class HotelesActivityD extends AppCompatActivity
         textViewDrawer1 = (TextView) findViewById(R.id.textViewDrawer1);
         textViewDrawer2 = (TextView) findViewById(R.id.textViewDrawer2);
 
-        bhunomap = (Button) findViewById(R.id.bhunomap);
-
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-/*
+
         Bundle box =getIntent().getExtras();
         username = String.valueOf(box.getString("username"));
         correo= String.valueOf(box.getString("correo"));
-*/
+
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
@@ -179,18 +174,18 @@ public class HotelesActivityD extends AppCompatActivity
             switch (position) {
                 case 0:
                     HotelUnoFragment h1 = new HotelUnoFragment();
-                    Lat="6.204687";
-                    Lon="-75.5859901";
+                   // Lat="6.204687";
+                   // Lon="-75.5859901";
                     return h1;
                 case 1:
                     HotelDosFragment h2 = new HotelDosFragment();
-                    Lat="6.2665476";
-                    Lon="-75.5662759";
+                    //Lat="6.2665476";
+                    //Lon="-75.5662759";
                     return h2;
                 case 2:
                     HotelTresFragment h3 = new HotelTresFragment();
-                    Lat="6.235422";
-                    Lon="-75.5409195";
+                    //Lat="6.235422";
+                    //Lon="-75.5409195";
                     return h3;
                 default:
                     return null;

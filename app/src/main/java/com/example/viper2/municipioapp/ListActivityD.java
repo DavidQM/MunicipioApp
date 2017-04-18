@@ -20,6 +20,7 @@ import android.view.MenuItem;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.content.Intent;
@@ -32,17 +33,20 @@ public class ListActivityD extends AppCompatActivity
     ListView listView;
     String username="",correo="";
     //String username="david",correo="a@a";
-    Intent intent;
+    Intent intent,intent2;
     TextView textViewDrawer1,textViewDrawer2;
+
+    String Lon="",Lat="";
+
 
     SharedPreferences prefs;//nombre de las preferencias
     SharedPreferences.Editor editor;
 
     private Lista_Entrada[] datos = new Lista_Entrada[]{
-            new Lista_Entrada(R.drawable.guatape_min,"Municipio Guatape","Informacion General del Municipio.","Guatape(Ant)"),
-            new Lista_Entrada(R.drawable.hbenjamar_min,"Hoteles","Lugares de Hospedaje.","Guatape(Ant)"),
-            new Lista_Entrada(R.drawable.rlafogata_min,"Restaurantes","Diversidad gastronomica con buena mesa.","Guatape(Ant)"),
-            new Lista_Entrada(R.drawable.zocalos_min,"¿Que Hacer?","Planes divertidos y emocionantes.","Guatape(Ant)")
+            new Lista_Entrada(R.drawable.guatape_min,"Municipio Guatape","Ubicacion delos puntos de encuentro","Guatape(Ant)"),
+            new Lista_Entrada(R.drawable.hbenjamar_min,"Hoteles","Ubicacion de los Hoteles.","Guatape(Ant)"),
+            new Lista_Entrada(R.drawable.rlafogata_min,"Restaurantes","Ubicacion de los Restaurantes.","Guatape(Ant)"),
+            new Lista_Entrada(R.drawable.zocalos_min,"¿Que Hacer?","Ubicacion de los citos recreativos.","Guatape(Ant)")
     };
 
     @Override
@@ -55,6 +59,8 @@ public class ListActivityD extends AppCompatActivity
 
         textViewDrawer1 = (TextView) findViewById(R.id.textViewDrawer1);
         textViewDrawer2 = (TextView) findViewById(R.id.textViewDrawer2);
+
+
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -94,32 +100,28 @@ public class ListActivityD extends AppCompatActivity
                 //Toast.makeText(getApplicationContext(),opcion,Toast.LENGTH_SHORT).show();
                 switch (position) {
                     case 0:
-                        intent = new Intent(ListActivityD.this, MainActivityD.class);
-                        intent.putExtra("username", username);
-                        intent.putExtra("correo", correo);
-                        startActivity(intent);
-                        finish();
+                        intent2 = new Intent(ListActivityD.this, MapsActivity.class);
+                        intent2.putExtra("mapa",position);
+                        startActivity(intent2);
+                        //finish();
                         break;
                     case 1:
-                        intent = new Intent(ListActivityD.this, HotelesActivityD.class);
-                        intent.putExtra("username", username);
-                        intent.putExtra("correo", correo);
-                        startActivity(intent);
-                        finish();
+                        intent2 = new Intent(ListActivityD.this, MapsActivity.class);
+                        intent2.putExtra("mapa",position);
+                        startActivity(intent2);
+                        //finish();
                         break;
                     case 2:
-                        intent = new Intent (ListActivityD.this, RestActivityD.class);
-                        intent.putExtra("username", username);
-                        intent.putExtra("correo", correo);
-                        startActivity(intent);
-                        finish();
+                        intent2 = new Intent (ListActivityD.this, MapsActivity.class);
+                        intent2.putExtra("mapa",position);
+                        startActivity(intent2);
+                        //finish();
                         break;
                     case 3:
-                        intent = new Intent (ListActivityD.this, QhActivityD.class);
-                        intent.putExtra("username", username);
-                        intent.putExtra("correo", correo);
-                        startActivity(intent);
-                        finish();
+                        intent2 = new Intent (ListActivityD.this, MapsActivity.class);
+                        intent2.putExtra("mapa",position);
+                        startActivity(intent2);
+                        //finish();
                         break;
                     default:
                         break;

@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">MunicipioApp</string>
-    <string name="title_activity_splash">SplashActivity</string>
+    <string name="title_activity_splash">MunicipioApp</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="iniciar">Iniciar</string>
@@ -160,11 +160,11 @@
     <string name="pmain">Pagina Principal</string>
     <string name="list">Lista General</string>
     <string name="about">About</string>
-    <string name="title_activity_qh_d">QhActivityD</string>
-    <string name="title_activity_main_d">MainActivityD</string>
-    <string name="title_activity_perfil_d">PerfilActivityD</string>
-    <string name="title_activity_list_d">ListActivityD</string>
+    <string name="title_activity_qh_d">¿Que Hacer?</string>
+    <string name="title_activity_main_d">Pagina Principal</string>
+    <string name="title_activity_perfil_d">Perfil de Usuario</string>
+    <string name="title_activity_list_d">Mapas - Lugares</string>
     <string name="title_activity_maps">Map</string>
-    <string name="mapa">Ver ubicacion en Mapa</string>
+    <string name="mapa">Mapas</string>
 
 </resources>
