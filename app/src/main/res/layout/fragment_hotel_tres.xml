@@ -77,19 +77,28 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="center">
-                <TextView
+                <!--
+                 <TextView
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_gravity="center"
+                     android:text="@string/url"
+                     android:layout_margin="2dp"/>
+                 <TextView
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_gravity="center"
+                     android:textColor="@color/blue"
+                     android:text="@string/HotelTres_texto_4"
+                     android:layout_margin="2dp"
+                     android:id="@+id/h1map"/>
+                     -->
+                <Button
                     android:layout_width="wrap_content"
+                    android:layout_weight="0"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="@string/url"
-                    android:layout_margin="2dp"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:textColor="@color/blue"
-                    android:text="@string/HotelTres_texto_4"
-                    android:layout_margin="2dp"/>
+                    android:text="@string/mapa"
+                    android:id="@+id/bhtresmap"/>
             </LinearLayout>
         </GridLayout>
     </ScrollView>

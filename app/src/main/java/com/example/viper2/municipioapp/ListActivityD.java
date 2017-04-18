@@ -1,6 +1,7 @@
 package com.example.viper2.municipioapp;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -34,6 +35,9 @@ public class ListActivityD extends AppCompatActivity
     Intent intent;
     TextView textViewDrawer1,textViewDrawer2;
 
+    SharedPreferences prefs;//nombre de las preferencias
+    SharedPreferences.Editor editor;
+
     private Lista_Entrada[] datos = new Lista_Entrada[]{
             new Lista_Entrada(R.drawable.guatape_min,"Municipio Guatape","Informacion General del Municipio.","Guatape(Ant)"),
             new Lista_Entrada(R.drawable.hbenjamar_min,"Hoteles","Lugares de Hospedaje.","Guatape(Ant)"),
@@ -45,6 +49,9 @@ public class ListActivityD extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_d);
+
+        prefs = getSharedPreferences("MisPreferencias",MODE_PRIVATE);//traer informacion
+        editor = prefs.edit();//traemos el editor
 
         textViewDrawer1 = (TextView) findViewById(R.id.textViewDrawer1);
         textViewDrawer2 = (TextView) findViewById(R.id.textViewDrawer2);
@@ -219,6 +226,8 @@ public class ListActivityD extends AppCompatActivity
                 startActivity(intent);
                 Toast.makeText(getApplicationContext(),"Sección cerrada", Toast.LENGTH_SHORT).show();
                 finish();
+                editor.putInt("login",-1);//sobre escribimos con -1 (desloggeamos)
+                editor.commit();//practica 5
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

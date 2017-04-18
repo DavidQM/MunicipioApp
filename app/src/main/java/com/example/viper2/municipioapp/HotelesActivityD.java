@@ -1,6 +1,7 @@
 package com.example.viper2.municipioapp;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -18,6 +19,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -30,23 +32,34 @@ public class HotelesActivityD extends AppCompatActivity
     TextView textViewDrawer1,textViewDrawer2;
 
     String username="",correo="";
-    Intent intent;
+    Intent intent,intent2;
+
+    String Lon="",Lat="";
+    Button bhunomap;
+
+    SharedPreferences prefs;//nombre de las preferencias
+    SharedPreferences.Editor editor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hoteles_d);
 
+        prefs = getSharedPreferences("MisPreferencias",MODE_PRIVATE);//traer informacion
+        editor = prefs.edit();//traemos el editor
+
         textViewDrawer1 = (TextView) findViewById(R.id.textViewDrawer1);
         textViewDrawer2 = (TextView) findViewById(R.id.textViewDrawer2);
 
+        bhunomap = (Button) findViewById(R.id.bhunomap);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+/*
         Bundle box =getIntent().getExtras();
         username = String.valueOf(box.getString("username"));
         correo= String.valueOf(box.getString("correo"));
-
+*/
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
@@ -141,6 +154,8 @@ public class HotelesActivityD extends AppCompatActivity
                 startActivity(intent);
                 Toast.makeText(getApplicationContext(),"Sección cerrada", Toast.LENGTH_SHORT).show();
                 finish();
+                editor.putInt("login",-1);//sobre escribimos con -1 (desloggeamos)
+                editor.commit();//practica 5
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -159,19 +174,28 @@ public class HotelesActivityD extends AppCompatActivity
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
             //return PlaceholderFragment.newInstance(position + 1);
+            Toast.makeText(getApplicationContext(), "Mapa", Toast.LENGTH_SHORT).show();
+
             switch (position) {
                 case 0:
                     HotelUnoFragment h1 = new HotelUnoFragment();
+                    Lat="6.204687";
+                    Lon="-75.5859901";
                     return h1;
                 case 1:
                     HotelDosFragment h2 = new HotelDosFragment();
+                    Lat="6.2665476";
+                    Lon="-75.5662759";
                     return h2;
                 case 2:
                     HotelTresFragment h3 = new HotelTresFragment();
+                    Lat="6.235422";
+                    Lon="-75.5409195";
                     return h3;
                 default:
                     return null;
             }
+
         }
 
         @Override
@@ -193,6 +217,7 @@ public class HotelesActivityD extends AppCompatActivity
             }
         }
     }
+
 }
 
 

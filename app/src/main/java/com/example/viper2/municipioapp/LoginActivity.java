@@ -23,17 +23,17 @@ public class LoginActivity extends AppCompatActivity {
     Intent intent;//para abirir nuevas actividades
     //String username="david", password="123",correo="adqm@";//para hacer pruebas rapidas
     String username="", password="",correo="";
-    //SharedPreferences prefs;//practica 5
-    //SharedPreferences.Editor editor;//practica 5
+    SharedPreferences prefs;//nombre de las preferencias
+    SharedPreferences.Editor editor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        /*
-        prefs = getSharedPreferences("MisPreferencias",MODE_PRIVATE);//practica 5
-        editor = prefs.edit();//practica 5
 
+        prefs = getSharedPreferences("MisPreferencias",MODE_PRIVATE);//traer informacion
+        editor = prefs.edit();//traemos el editor
+        //inicializamos
         username = prefs.getString("nombre",""); //practica 5
         password = prefs.getString("pass","");//practica 5
         correo = prefs.getString("mail","");//practica 5
@@ -43,14 +43,14 @@ public class LoginActivity extends AppCompatActivity {
 
         //Practica 5
         if(prefs.getInt("login",-1)==1){//1 hay alguien loggeado -1 no hay nadie loggeado
-            intent = new Intent (LoginActivity.this, MainActivity.class);
+            intent = new Intent (LoginActivity.this, MainActivityD.class);
             intent.putExtra("username", username);
             intent.putExtra("correo", correo);
             startActivity(intent);
             setResult(RESULT_OK, intent);
             finish();
             }
-        */
+
         eUsername = (EditText) findViewById(R.id.eUsername);
         ePassword = (EditText) findViewById(R.id.ePassword);
         tRegistrarse = (TextView) findViewById(R.id.tRegistrarse);
@@ -67,10 +67,10 @@ public class LoginActivity extends AppCompatActivity {
                 else {
                     //Validar los datos digitados con los del registro
                     if (eUsername.getText().toString().equals(username) && ePassword.getText().toString().equals(password)){
-                        /*
+
                         editor.putInt("login",1);//sobre escribimos con 1 (alguien ya esta loggeado)//practica 5
                         editor.commit();//practica 5
-                        */
+
                         intent = new Intent (LoginActivity.this, MainActivityD.class);
                         intent.putExtra("username", username);
                         intent.putExtra("correo", correo);
@@ -108,12 +108,13 @@ public class LoginActivity extends AppCompatActivity {
             username = data.getExtras().getString("username");
             password = data.getExtras().getString("password");
             correo = data.getExtras().getString("correo");
-            /*
+
+            //datos a almacenar
             editor.putString("nombre",username);//practica 5
             editor.putString("pass",password);//practica 5
             editor.putString("mail",correo);//practica 5
-            editor.commit();//practica 5
-            */
+            editor.commit();//olbligatorio para que se almacene la informacion
+
 
         }
         if (requestCode==1234 && resultCode == RESULT_CANCELED){

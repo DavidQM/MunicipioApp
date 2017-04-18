@@ -27,7 +27,10 @@
         <activity
             android:name=".HotelesActivityD"
             android:label="@string/title_activity_hoteles_d"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar" >
+
+            </activity>
+
         <activity
             android:name=".RestActivityD"
             android:label="@string/title_activity_rest_d"

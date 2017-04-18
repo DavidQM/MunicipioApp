@@ -1,6 +1,7 @@
 package com.example.viper2.municipioapp;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -27,10 +28,16 @@ public class PerfilActivityD extends AppCompatActivity
     TextView eUsername,eCorreo;
     TextView textViewDrawer1,textViewDrawer2;
 
+    SharedPreferences prefs;//nombre de las preferencias
+    SharedPreferences.Editor editor;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil_d);
+
+        prefs = getSharedPreferences("MisPreferencias",MODE_PRIVATE);//traer informacion
+        editor = prefs.edit();//traemos el editor
 
         textViewDrawer1 = (TextView) findViewById(R.id.P_textViewDrawer1);
         textViewDrawer2 = (TextView) findViewById(R.id.P_textViewDrawer2);
@@ -149,6 +156,8 @@ public class PerfilActivityD extends AppCompatActivity
                 startActivity(intent);
                 Toast.makeText(getApplicationContext(),"Sección cerrada", Toast.LENGTH_SHORT).show();
                 finish();
+                editor.putInt("login",-1);//sobre escribimos con -1 (desloggeamos)
+                editor.commit();//practica 5
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
